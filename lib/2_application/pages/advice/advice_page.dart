@@ -1,12 +1,27 @@
+import 'package:clean_architecture/2_application/pages/advice/bloc/advicer_bloc.dart';
+import 'package:clean_architecture/2_application/pages/advice/widgets/advice_field.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/custom_button.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/error_message.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/services/theme_service.dart';
 
-class AdvicePage extends StatelessWidget {
-  const AdvicePage({super.key});
+class AdvicerPageWrapperProvider extends StatelessWidget {
+  const AdvicerPageWrapperProvider({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => AdvicerBloc(),
+      child: const AdvicerPage(),
+    );
+  }
+}
+
+class AdvicerPage extends StatelessWidget {
+  const AdvicerPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +46,32 @@ class AdvicePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50),
         child: Column(
-          children: const [
+          children: [
             Expanded(
               child: Center(
-                child: ErrorMessage(message: 'message'),
-                // child: Text(
-                //   'Your advice is waiting for you!',
-                //   style: themeData.textTheme.headline1  ,
-                // ),
-                // child: CircularProgressIndicator(
-                //   color: themeData.colorScheme.secondary,
-                // ),
+                child: BlocBuilder<AdvicerBloc, AdvicerState>(
+                  builder: (BuildContext context, AdvicerState state) {
+                    if (state is AdvicerInitial) {
+                      return Text(
+                        'Your advice is waiting for you!',
+                        style: themeData.textTheme.headline1,
+                      );
+                    } else if (state is AdvicerLoading) {
+                      return CircularProgressIndicator(
+                        color: themeData.colorScheme.secondary,
+                      );
+                    } else if (state is AdvicerLoaded) {
+                      return AdviceField(advice: state.advice);
+                    } else if (state is AdvicerError) {
+                      return ErrorMessage(message: state.message);
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
               ),
             ),
-            CustomButton(),
-            SizedBox(height: 100),
+            const CustomButton(),
+            const SizedBox(height: 100),
           ],
         ),
       ),
