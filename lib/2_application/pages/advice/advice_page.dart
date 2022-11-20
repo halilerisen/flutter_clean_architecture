@@ -1,3 +1,4 @@
+import 'package:clean_architecture/1_domain/usecases/advice_usecases.dart';
 import 'package:clean_architecture/2_application/pages/advice/bloc/advicer_bloc.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/advice_field.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/custom_button.dart';
@@ -14,7 +15,7 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerBloc(),
+      create: (context) => AdvicerBloc(adviceUseCases: AdviceUseCases()),
       child: const AdvicerPage(),
     );
   }
