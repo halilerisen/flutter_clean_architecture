@@ -1,3 +1,5 @@
+import 'package:clean_architecture/0_data/datasources/advice_remote_datasource.dart';
+import 'package:clean_architecture/0_data/repositories/advice_repo_impl.dart';
 import 'package:clean_architecture/1_domain/usecases/advice_usecases.dart';
 import 'package:clean_architecture/2_application/pages/advice/bloc/advicer_bloc.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/advice_field.dart';
@@ -15,7 +17,13 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerBloc(adviceUseCases: AdviceUseCases()),
+      create: (context) => AdvicerBloc(
+        adviceUseCases: AdviceUseCases(
+          adviceRepoImpl: AdviceRepoImpl(
+            adviceRemoteDataSourceImpl: AdviceRemoteDataSourceImpl(),
+          ),
+        ),
+      ),
       child: const AdvicerPage(),
     );
   }
