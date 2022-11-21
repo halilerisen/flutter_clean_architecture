@@ -6,15 +6,15 @@ import 'package:clean_architecture/1_domain/repositories/advice_repo.dart';
 import 'package:dartz/dartz.dart';
 
 class AdviceRepoImpl implements AdviceRepo {
-  final AdviceRemoteDataSourceImpl _adviceRemoteDataSourceImpl;
-
+  final AdviceRemoteDataSource adviceRemoteDataSourceImpl;
   AdviceRepoImpl({
-    required AdviceRemoteDataSourceImpl adviceRemoteDataSourceImpl,
-  }) : _adviceRemoteDataSourceImpl = adviceRemoteDataSourceImpl;
+    required this.adviceRemoteDataSourceImpl,
+  });
+
   @override
   Future<Either<Failure, AdviceEntity>> getAdviceFromDataSource() async {
     try {
-      var result = await _adviceRemoteDataSourceImpl.getRandomAdviceFromAPI();
+      var result = await adviceRemoteDataSourceImpl.getRandomAdviceFromAPI();
 
       return Right(result);
     } on ServerException {

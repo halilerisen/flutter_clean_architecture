@@ -17,6 +17,7 @@ const String cacheFailureMessage = 'Ups, Cache Failed. Please try again!';
 
 class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
   final AdviceUseCases _adviceUseCases;
+
   AdvicerBloc({
     required AdviceUseCases adviceUseCases,
   })  : _adviceUseCases = adviceUseCases,

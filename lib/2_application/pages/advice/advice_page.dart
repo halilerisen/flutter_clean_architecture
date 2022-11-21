@@ -1,7 +1,3 @@
-import 'package:clean_architecture/0_data/datasources/advice_remote_datasource.dart';
-import 'package:clean_architecture/0_data/repositories/advice_repo_impl.dart';
-import 'package:clean_architecture/1_domain/usecases/advice_usecases.dart';
-import 'package:clean_architecture/2_application/pages/advice/bloc/advicer_bloc.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/advice_field.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/custom_button.dart';
 import 'package:clean_architecture/2_application/pages/advice/widgets/error_message.dart';
@@ -9,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
+import '../../../injection.dart';
 import '../../core/services/theme_service.dart';
+import 'bloc/advicer_bloc.dart';
 
 class AdvicerPageWrapperProvider extends StatelessWidget {
   const AdvicerPageWrapperProvider({super.key});
@@ -17,13 +15,7 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerBloc(
-        adviceUseCases: AdviceUseCases(
-          adviceRepoImpl: AdviceRepoImpl(
-            adviceRemoteDataSourceImpl: AdviceRemoteDataSourceImpl(),
-          ),
-        ),
-      ),
+      create: (context) => sl<AdvicerBloc>(),
       child: const AdvicerPage(),
     );
   }
@@ -59,7 +51,7 @@ class AdvicerPage extends StatelessWidget {
             Expanded(
               child: Center(
                 child: BlocBuilder<AdvicerBloc, AdvicerState>(
-                  builder: (BuildContext context, AdvicerState state) {
+                  builder: (BuildContext context,  AdvicerState state) {
                     if (state is AdvicerInitial) {
                       return Text(
                         'Your advice is waiting for you!',
