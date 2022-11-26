@@ -8,16 +8,16 @@ part 'advicer_state.dart';
 
 const generalFailureMessage = 'Ups, something gone wrong. Please try again!';
 const serverFailureMessage = 'Ups, API Error. please try again!';
-const cacheFailureMessage = 'Ups, chache failed. Please try again!';
+const cacheFailureMessage = 'Ups, cache failed. Please try again!';
 
 class AdvicerCubit extends Cubit<AdvicerCubitState> {
   final AdviceUseCases adviceUseCases;
   AdvicerCubit({
     required this.adviceUseCases,
-  }) : super(AdvicerInitial());
+  }) : super(const AdvicerInitial());
 
   void adviceRequested() async {
-    emit(AdvicerStateLoading());
+    emit(const AdvicerStateLoading());
     final failureOrAdvice = await adviceUseCases.getAdvice();
     failureOrAdvice.fold(
         (failure) => emit(AdvicerStateError(message: _mapFailureToMessage(failure))), (advice) => emit(AdvicerStateLoaded(advice: advice.advice)));
