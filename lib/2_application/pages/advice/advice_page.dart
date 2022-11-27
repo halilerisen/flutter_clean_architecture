@@ -51,7 +51,7 @@ class AdvicerPage extends StatelessWidget {
             Expanded(
               child: Center(
                 child: BlocBuilder<AdvicerBloc, AdvicerState>(
-                  builder: (BuildContext context,  AdvicerState state) {
+                  builder: (BuildContext context, AdvicerState state) {
                     if (state is AdvicerInitial) {
                       return Text(
                         'Your advice is waiting for you!',
@@ -71,7 +71,9 @@ class AdvicerPage extends StatelessWidget {
                 ),
               ),
             ),
-            const CustomButton(),
+            CustomButton(
+              onTap: () => context.read<AdvicerBloc>().add(AdvicerRequestedEvent()),
+            ),
             const SizedBox(height: 100),
           ],
         ),
