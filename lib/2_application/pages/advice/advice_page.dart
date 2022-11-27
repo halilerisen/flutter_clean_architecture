@@ -1,12 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../../injection.dart';
 import '../../2_application.dart';
-
-
 
 class AdvicerPageWrapperProvider extends StatelessWidget {
   const AdvicerPageWrapperProvider({super.key});
@@ -71,7 +68,9 @@ class AdvicerPage extends StatelessWidget {
               ),
             ),
             CustomButton(
-              onTap: () => context.read<AdvicerBloc>().add(AdvicerRequestedEvent()),
+              onTap: () {
+                context.read<AdvicerBloc>().add(AdvicerRequestedEvent());
+              },
             ),
             const SizedBox(height: 100),
           ],

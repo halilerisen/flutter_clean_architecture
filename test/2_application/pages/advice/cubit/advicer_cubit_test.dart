@@ -1,8 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:clean_architecture/1_domain/1_domain.dart';
-import 'package:clean_architecture/1_domain/usecases/advice_usecases.dart';
 import 'package:clean_architecture/2_application/pages/advice/cubit/cubit.dart';
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

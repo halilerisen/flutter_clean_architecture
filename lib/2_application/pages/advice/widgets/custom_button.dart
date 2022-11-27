@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
     return InkResponse(
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
-      onTap: onTap?.call(),
+      onTap: onTap,
       child: Material(
         elevation: 20,
         borderRadius: BorderRadius.circular(15),
