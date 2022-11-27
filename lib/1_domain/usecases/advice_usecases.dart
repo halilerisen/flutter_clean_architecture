@@ -1,8 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../entities/advice_entity.dart';
-import '../failures/failures.dart';
-import '../repositories/advice_repo.dart';
+import '../1_domain.dart';
 
 class AdviceUseCases {
   final AdviceRepo adviceRepoImpl;

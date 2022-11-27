@@ -1,11 +1,7 @@
 import 'dart:io';
 
-import 'package:clean_architecture/0_data/datasources/advice_remote_datasource.dart';
-import 'package:clean_architecture/0_data/exceptions/exceptions.dart';
-import 'package:clean_architecture/0_data/modals/advice_model.dart';
-import 'package:clean_architecture/0_data/repositories/advice_repo_impl.dart';
-import 'package:clean_architecture/1_domain/entities/advice_entity.dart';
-import 'package:clean_architecture/1_domain/failures/failures.dart';
+import 'package:clean_architecture/0_data/0_data.dart';
+import 'package:clean_architecture/1_domain/1_domain.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';

@@ -1,4 +1,4 @@
-import 'package:clean_architecture/1_domain/entities/advice_entity.dart';
+import '../../1_domain/1_domain.dart';
 
 class AdviceModel extends AdviceEntity {
   const AdviceModel({

@@ -1,9 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:clean_architecture/2_application/core/services/theme_service.dart';
-import 'package:clean_architecture/2_application/pages/advice/advice_page.dart';
-import 'package:clean_architecture/2_application/pages/advice/bloc/advicer_bloc.dart';
-import 'package:clean_architecture/2_application/pages/advice/widgets/advice_field.dart';
-import 'package:clean_architecture/2_application/pages/advice/widgets/error_message.dart';
+import 'package:clean_architecture/2_application/2_application.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -58,9 +54,8 @@ void main() {
 
               final Finder advicerInitialTextFinder = find.text('Your advice is waiting for you!');
 
-              expect(advicerInitialTextFinder, findsOneWidget);
-
               // ASSERT
+              expect(advicerInitialTextFinder, findsOneWidget);
             },
           );
         },
@@ -89,9 +84,8 @@ void main() {
 
               final Finder advicerLoadingFinder = find.byType(CircularProgressIndicator);
 
-              expect(advicerLoadingFinder, findsOneWidget);
-
               // ASSERT
+              expect(advicerLoadingFinder, findsOneWidget);
             },
           );
         },
@@ -129,10 +123,9 @@ void main() {
               final Finder advicerLoadedFinder = find.byType(AdviceField);
               final String advicerLoadedText = widgetTester.widget<AdviceField>(advicerLoadedFinder).advice;
 
+              // ASSERT
               expect(advicerLoadedFinder, findsOneWidget);
               expect(advicerLoadedText, adviceText);
-
-              // ASSERT
             },
           );
         },
@@ -170,10 +163,9 @@ void main() {
               final Finder advicerErrorFinder = find.byType(ErrorMessage);
               final String advicerErrorText = widgetTester.widget<ErrorMessage>(advicerErrorFinder).message;
 
+              // ASSERT
               expect(advicerErrorFinder, findsOneWidget);
               expect(advicerErrorText, errorMessage);
-
-              // ASSERT
             },
           );
         },

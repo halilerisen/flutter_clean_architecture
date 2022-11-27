@@ -1,9 +1,7 @@
-import 'package:clean_architecture/0_data/datasources/advice_remote_datasource.dart';
-import 'package:clean_architecture/0_data/exceptions/exceptions.dart';
-import 'package:clean_architecture/1_domain/entities/advice_entity.dart';
-import 'package:clean_architecture/1_domain/failures/failures.dart';
-import 'package:clean_architecture/1_domain/repositories/advice_repo.dart';
 import 'package:dartz/dartz.dart';
+
+import '../../1_domain/1_domain.dart';
+import '../0_data.dart';
 
 class AdviceRepoImpl implements AdviceRepo {
   final AdviceRemoteDataSource adviceRemoteDataSourceImpl;

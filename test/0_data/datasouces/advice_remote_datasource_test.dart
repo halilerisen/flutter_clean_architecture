@@ -1,6 +1,5 @@
-import 'package:clean_architecture/0_data/datasources/advice_remote_datasource.dart';
-import 'package:clean_architecture/0_data/exceptions/exceptions.dart';
-import 'package:clean_architecture/0_data/modals/advice_model.dart';
+
+import 'package:clean_architecture/0_data/0_data.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:mockito/annotations.dart';

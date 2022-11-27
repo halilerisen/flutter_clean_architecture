@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:clean_architecture/0_data/exceptions/exceptions.dart';
 import 'package:http/http.dart' as http;
 
-import '../modals/advice_model.dart';
+import '../0_data.dart';
+
 
 abstract class AdviceRemoteDataSource {
   /// request random advice from api

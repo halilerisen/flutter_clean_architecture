@@ -2,7 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:clean_architecture/1_domain/entities/advice_entity.dart';
-import 'package:clean_architecture/1_domain/failures/failures.dart';
+import 'package:clean_architecture/1_domain/failures/failure.dart';
 import 'package:clean_architecture/1_domain/usecases/advice_usecases.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';

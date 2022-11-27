@@ -6,7 +6,7 @@
 import 'dart:async' as _i5;
 
 import 'package:clean_architecture/1_domain/entities/advice_entity.dart' as _i7;
-import 'package:clean_architecture/1_domain/failures/failures.dart' as _i6;
+import 'package:clean_architecture/1_domain/failures/failure.dart' as _i6;
 import 'package:clean_architecture/1_domain/repositories/advice_repo.dart'
     as _i2;
 import 'package:clean_architecture/1_domain/usecases/advice_usecases.dart'

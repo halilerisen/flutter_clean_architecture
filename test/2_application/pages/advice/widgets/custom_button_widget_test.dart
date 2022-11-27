@@ -1,4 +1,4 @@
-import 'package:clean_architecture/2_application/pages/advice/widgets/custom_button.dart';
+import 'package:clean_architecture/2_application/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';

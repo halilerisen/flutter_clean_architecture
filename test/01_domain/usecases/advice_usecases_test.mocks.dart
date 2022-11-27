@@ -10,7 +10,7 @@ import 'package:clean_architecture/0_data/datasources/advice_remote_datasource.d
 import 'package:clean_architecture/0_data/repositories/advice_repo_impl.dart'
     as _i4;
 import 'package:clean_architecture/1_domain/entities/advice_entity.dart' as _i7;
-import 'package:clean_architecture/1_domain/failures/failures.dart' as _i6;
+import 'package:clean_architecture/1_domain/failures/failure.dart' as _i6;
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 

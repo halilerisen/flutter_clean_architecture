@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../1_domain/failures/failures.dart';
+import '../../../../1_domain/failures/failure.dart';
 import '../../../../1_domain/usecases/advice_usecases.dart';
 
 part 'advicer_state.dart';

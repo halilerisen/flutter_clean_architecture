@@ -1,13 +1,12 @@
-import 'package:clean_architecture/2_application/pages/advice/widgets/advice_field.dart';
-import 'package:clean_architecture/2_application/pages/advice/widgets/custom_button.dart';
-import 'package:clean_architecture/2_application/pages/advice/widgets/error_message.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../../injection.dart';
-import '../../core/services/theme_service.dart';
-import 'bloc/advicer_bloc.dart';
+import '../../2_application.dart';
+
+
 
 class AdvicerPageWrapperProvider extends StatelessWidget {
   const AdvicerPageWrapperProvider({super.key});
