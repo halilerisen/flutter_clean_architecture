@@ -53,7 +53,7 @@ void main() {
             ),
             build: () => AdvicerBloc(adviceUseCases: mocAdviceUsecaseUnderTest),
             act: (bloc) => bloc.add(AdvicerRequestedEvent()),
-            expect: () => <AdvicerState>[AdvicerLoading(), AdvicerError(message: serverFailureMessage)],
+            expect: () => <AdvicerState>[AdvicerLoading(), const AdvicerError(message: serverFailureMessage)],
           );
 
           blocTest<AdvicerBloc, AdvicerState>(
@@ -65,7 +65,7 @@ void main() {
             ),
             build: () => AdvicerBloc(adviceUseCases: mocAdviceUsecaseUnderTest),
             act: (bloc) => bloc.add(AdvicerRequestedEvent()),
-            expect: () => <AdvicerState>[AdvicerLoading(), AdvicerError(message: cacheFailureMessage)],
+            expect: () => <AdvicerState>[AdvicerLoading(), const AdvicerError(message: cacheFailureMessage)],
           );
 
           blocTest<AdvicerBloc, AdvicerState>(
@@ -77,7 +77,7 @@ void main() {
             ),
             build: () => AdvicerBloc(adviceUseCases: mocAdviceUsecaseUnderTest),
             act: (bloc) => bloc.add(AdvicerRequestedEvent()),
-            expect: () => <AdvicerState>[AdvicerLoading(), AdvicerError(message: generalFailureMessage)],
+            expect: () => <AdvicerState>[AdvicerLoading(), const AdvicerError(message: generalFailureMessage)],
           );
         },
       );

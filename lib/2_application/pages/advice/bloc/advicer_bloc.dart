@@ -21,7 +21,7 @@ class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
   AdvicerBloc({
     required AdviceUseCases adviceUseCases,
   })  : _adviceUseCases = adviceUseCases,
-        super(AdvicerInitial()) {
+        super(const AdvicerInitial()) {
     on<AdvicerEvent>((AdvicerEvent event, Emitter<AdvicerState> emit) async {
       emit(AdvicerLoading());
 
