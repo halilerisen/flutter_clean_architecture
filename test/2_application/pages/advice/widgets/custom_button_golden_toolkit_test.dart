@@ -23,6 +23,7 @@ void main() {
           await tester.pumpWidgetBuilder(builder.build());
           await screenMatchesGolden(tester, 'custom_button_enabled_golden_toolkit');
         },
+        tags: ['golden_toolkit'],
       );
     },
   );
