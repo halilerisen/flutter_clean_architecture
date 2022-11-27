@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "47.0.0"
+  alchemist:
+    dependency: "direct dev"
+    description:
+      name: alchemist
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.1"
   analyzer:
     dependency: transitive
     description:
@@ -656,4 +663,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=2.18.4 <3.0.0"
-  flutter: ">=1.16.0"
+  flutter: ">=3.3.0"
