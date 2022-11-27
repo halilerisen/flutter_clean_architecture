@@ -20,11 +20,12 @@ dependencies:
 
 dev_dependencies:
   bloc_test: ^9.1.0
-  build_runner:
+  build_runner: null
   file: ^6.1.2
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  golden_toolkit: ^0.13.0
   integration_test:
     sdk: flutter
   mockito: ^5.3.2
